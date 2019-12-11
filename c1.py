@@ -1,4 +1,4 @@
-def partofspeach(file, part, number = ''):
+def partofspeach(file, part, number = ''):                #я использовала словарь частотности
     file = open(file, encoding = 'utf-8')
     f = file.readlines()
     a = []
@@ -6,7 +6,7 @@ def partofspeach(file, part, number = ''):
         line = line.split('|')
         morpho = line[1].split()
         if morpho[0] == part and (number == '' or (number in morpho)):
-            a.append(tuple([line[0]] + morpho))
+            a.append(([line[0]], ''.join(morpho)))
     file.close()
     return a
 
